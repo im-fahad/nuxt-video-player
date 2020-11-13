@@ -3,19 +3,19 @@
             :allow="allow"
             :allowfullscreen="allowFullscreen"
             :id="id"
-            class="vue-player"
+            class="v-player"
             :class="playerClass">
     </iframe>
 </template>
 
 <script>
 export default {
-    name: 'vue-player',
+    name: 'v-player',
     props: {
         id: {
             type: String,
             required: false,
-            default: 'vue-player'
+            default: 'v-player'
         },
         src: {
             required: true,
@@ -118,7 +118,7 @@ export default {
 </script>
 
 <style>
-.vue-player {
+.v-player {
     width: 100%;
     height: 100%;
     border: none;
