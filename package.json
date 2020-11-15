@@ -1,6 +1,6 @@
 {
   "name": "nuxt-video-player",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "v-player is for play online and offline videos in any vue or nuxt project. it's supporting local or any kind of online videos",
   "main": "index.js",
   "scripts": {
