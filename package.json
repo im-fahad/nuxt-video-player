@@ -1,14 +1,16 @@
 {
     "name": "nuxt-video-player",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "nuxt-video-player is for play online and offline videos in any vue or nuxt project. it's supporting local or any kind of online video",
-    "files": ["dist"],
+    "files": [
+        "dist"
+    ],
     "main": "./dist/nuxt-video-player.common.js",
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
-        "build-library" : "vue-cli-service build --target lib --name nuxt-video-player ./src/index.js"
+        "build-library": "vue-cli-service build --target lib --name nuxt-video-player ./src/index.js"
     },
     "dependencies": {
         "core-js": "^3.6.5",
