@@ -1,13 +1,11 @@
-// import NuxtVideoPlayer from "@/components/Player";
-//
-// // const NuxtVideoPlayer ={
-// //     install(Vue){
-// //         Vue.component('nuxt-video-player', Player)
-// //     }
-// // };
-// //
-// // if (typeof window !== 'undefined' && window.Vue){
-// //     window.Vue.use(NuxtVideoPlayer)
-// // }
-//
-// export default NuxtVideoPlayer
+import Player from "@/Player";
+
+const install = (Vue) => {
+    Vue.component('nuxt-video-player', Player)
+}
+
+export default {
+    install
+}
+
+export {Player}

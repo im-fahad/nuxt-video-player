@@ -9,40 +9,19 @@
 </template>
 
 <script>
+import props from 'mixins/props'
+
 export default {
     name: 'nuxt-video-player',
-    props: {
-        id: {
-            type: String,
-            required: false,
-            default: 'v-player'
-        },
-        src: {
-            required: true,
-        },
-        allow: {
-            required: false,
-            type: String,
-            default: 'accelerometer; encrypted-media; gyroscope; picture-in-picture'
-        },
-        allowFullscreen: {
-            required: false,
-            type: Boolean,
-            default: true
-        },
-        playerClass: {
-            required: false,
-            type: String,
-        },
-    },
+    mixins: [props],
     computed: {
-        isValidVideoUrl() {
-            return this.src &&
-                (
-                    this.src.match(/^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/) ||
-                    this.src.match(/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/(?:[^/]*)\/videos\/|album\/(?:\d+)\/video\/|video\/|)(\d+)(?:[a-zA-Z0-9_-]+)?/i)
-                );
-        },
+        // isValidVideoUrl() {
+        //     return this.src &&
+        //         (
+        //             this.src.match(/^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/) ||
+        //             this.src.match(/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/(?:[^/]*)\/videos\/|album\/(?:\d+)\/video\/|video\/|)(\d+)(?:[a-zA-Z0-9_-]+)?/i)
+        //         );
+        // },
     },
     methods: {
         getVideoUrl(url) {
@@ -62,46 +41,41 @@ export default {
 
                 if (url.includes(videType.list)) {
                     url = url.split(videType.list)[0]
-                    const embedUrl = url.replace(
+                    return url.replace(
                         videType.watch,
                         videType.embed
                     )
-                    return embedUrl
                 }
 
                 if (url.includes(videType.feature)) {
                     url = url.split(videType.feature)[0]
-                    const embedUrl = url.replace(
+                    return url.replace(
                         videType.watch,
                         videType.embed
                     )
-                    return embedUrl
                 }
 
                 if (url.includes(videType.t)) {
                     url = url.split(videType.t)[0]
-                    const embedUrl = url.replace(
+                    return url.replace(
                         videType.watch,
                         videType.embed
                     )
-                    return embedUrl
                 }
 
                 if (url.includes(videType.watch)) {
-                    const embedUrl = url.replace(
+                    return url.replace(
                         videType.watch,
                         videType.embed
                     )
-                    return embedUrl
                 }
 
                 if (url.includes(videType.youtuBe)) {
                     const embedLink = "youtube.com/embed/"
-                    const embedUrl = url.replace(
+                    return url.replace(
                         videType.youtuBe,
                         embedLink
                     )
-                    return embedUrl
                 }
 
             }
