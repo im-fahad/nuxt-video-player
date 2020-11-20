@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name: 'Player',
+    name: 'nuxt-video-player',
     props: {
         id: {
             type: String,
