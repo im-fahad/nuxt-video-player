@@ -9,7 +9,7 @@ const mixin = {
             default: 'v-player'
         },
         src: {
-            required: true,
+            required: true
         },
         allow: {
             required: false,
@@ -23,9 +23,9 @@ const mixin = {
         },
         playerClass: {
             required: false,
-            type: String,
-        },
-    },
+            type: String
+        }
+    }
 }
 
 export default mixin
