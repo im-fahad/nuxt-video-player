@@ -2197,7 +2197,7 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Player.vue?vue&type=template&id=2058b868&bindings={"id":"props","src":"props","allow":"props","allowFullscreen":"props","playerClass":"props","isValidVideoUrl":"options","getVideoUrl":"options"}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Player.vue?vue&type=template&id=80037b18&bindings={"id":"props","src":"props","allow":"props","allowFullscreen":"props","playerClass":"props","isValidVideoUrl":"options","getVideoUrl":"options"}
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("iframe", {
@@ -2208,7 +2208,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     class: ["v-player", $props.playerClass]
   }, "\n    ", 10, ["src", "allow", "allowfullscreen", "id"]);
 }
-// CONCATENATED MODULE: ./src/components/Player.vue?vue&type=template&id=2058b868&bindings={"id":"props","src":"props","allow":"props","allowFullscreen":"props","playerClass":"props","isValidVideoUrl":"options","getVideoUrl":"options"}
+// CONCATENATED MODULE: ./src/components/Player.vue?vue&type=template&id=80037b18&bindings={"id":"props","src":"props","allow":"props","allowFullscreen":"props","playerClass":"props","isValidVideoUrl":"options","getVideoUrl":"options"}
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.includes.js
 var es_array_includes = __webpack_require__("caad");
@@ -2263,7 +2263,7 @@ var es_string_split = __webpack_require__("1276");
   },
   computed: {
     isValidVideoUrl: function isValidVideoUrl() {
-      return this.src && (this.src.match(/^(https?\:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/) || this.src.match(/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/(?:[^\/]*)\/videos\/|album\/(?:\d+)\/video\/|video\/|)(\d+)(?:[a-zA-Z0-9_\-]+)?/i));
+      return this.src && (this.src.match(/^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/) || this.src.match(/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/(?:[^/]*)\/videos\/|album\/(?:\d+)\/video\/|video\/|)(\d+)(?:[a-zA-Z0-9_-]+)?/i));
     }
   },
   methods: {

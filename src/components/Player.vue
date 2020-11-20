@@ -39,8 +39,8 @@ export default {
         isValidVideoUrl() {
             return this.src &&
                 (
-                    this.src.match(/^(https?\:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/) ||
-                    this.src.match(/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/(?:[^\/]*)\/videos\/|album\/(?:\d+)\/video\/|video\/|)(\d+)(?:[a-zA-Z0-9_\-]+)?/i)
+                    this.src.match(/^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/) ||
+                    this.src.match(/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/(?:[^/]*)\/videos\/|album\/(?:\d+)\/video\/|video\/|)(\d+)(?:[a-zA-Z0-9_-]+)?/i)
                 );
         },
     },
