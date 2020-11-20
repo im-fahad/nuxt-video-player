@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name: 'v-player',
+    name: 'Player',
     props: {
         id: {
             type: String,
