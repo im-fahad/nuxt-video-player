@@ -1,9 +1,7 @@
-import Player from './Player'
+import Player from './Player.vue'
 
-const install = (Vue) => {
-    Vue.component('nuxt-video-player', Player)
+export const install = (Vue) => {
+    Vue.component(Player.name, Player)
 }
 
-export default { Player, install }
-
-export { Player, install }
+export default Player
