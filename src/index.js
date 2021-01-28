@@ -1,7 +1,6 @@
-import Player from './Player.vue'
+import Vue from 'vue';
+import VideoPlayer from './Player';
 
-export const install = (Vue) => {
-    Vue.component(Player.name, Player)
-}
+Vue.component('VideoPlayer', VideoPlayer)
 
-export default Player
+export default VideoPlayer;

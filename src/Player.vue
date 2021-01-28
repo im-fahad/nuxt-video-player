@@ -12,7 +12,7 @@
 	import props from './mixins/props'
 
 	export default {
-		name: 'nuxt-video-player',
+		name: 'video-player',
 		mixins: [props],
 		computed: {
 			// isValidVideoUrl() {
