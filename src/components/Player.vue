@@ -12,7 +12,7 @@
 
 <script>
 import props from '../mixins/props'
-require('../../dist/vue-video-player.css')
+require('../assets/css/main.css')
 
 export default {
     name: 'video-player',
@@ -92,29 +92,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-.v-player {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    padding-top: 56.25%;
-    background-color: #000;
-    border-radius: 5px;
-    box-shadow: 0 5px 20px 0 rgb(0 0 0 / 15%);
-}
-
-.v-player__iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    outline: transparent;
-    border-radius: 5px;
-    background-color: #000;
-}
-</style>
