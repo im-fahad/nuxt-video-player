@@ -14,14 +14,18 @@ const mixin = {
         allow: {
             required: false,
             type: String,
-            default: 'accelerometer; encrypted-media; gyroscope; picture-in-picture'
+            default: 'clipboard-write; encrypted-media; gyroscope; picture-in-picture'
         },
         allowFullscreen: {
             required: false,
             type: Boolean,
             default: true
         },
-        playerClass: {
+        containerStyles: {
+            required: false,
+            type: String
+        },
+        playerStyles: {
             required: false,
             type: String
         }

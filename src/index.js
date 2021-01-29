@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import VideoPlayer from './Player';
+import VideoPlayer from './components/Player';
 
 Vue.component('VideoPlayer', VideoPlayer)
 
