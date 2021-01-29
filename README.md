@@ -12,7 +12,7 @@ npm install --save nuxt-video-player
 
 ### How to
 
-```vue
+```javascript
 import VideoPlayer from 'nuxt-video-player'
 
 components: {

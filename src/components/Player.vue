@@ -12,6 +12,7 @@
 
 <script>
 import props from '../mixins/props'
+require('../../dist/vue-video-player.css')
 
 export default {
     name: 'video-player',
