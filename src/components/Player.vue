@@ -1,92 +1,76 @@
 <template>
     <div :id="id" class="v-player" :class="containerStyles">
-        <iframe :src="getVideoUrl(src)"
+        <iframe v-if="isValidUrl && urlType == 'iframe'" :src="getVideoUrl(src)"
                 :allow="allow"
                 :allowfullscreen="allowFullscreen"
                 :id="id+'-iframe'"
                 class="v-player__iframe"
                 :class="playerStyles">
         </iframe>
+        <video v-if="isValidUrl && urlType == 'video'" class="v-player__video" controls :autoplay="autoplay"
+               :loop="loop"
+               :muted="muted"
+               :poster="poster"
+               :preload="preload"
+               name="media">
+            <source :src="getVideoUrl(src)">
+        </video>
+
+        <div v-if="!isValidUrl" class="v-player__content">
+            <!--            <h1 class="v-player__content-icon">&#9888;</h1>-->
+            <strong class="v-player__content-strong">Sorry,</strong>
+            <p class="v-player__content-text">The given video URL is not valid or unsupported.</p>
+            <p class="v-player__content-link">({{ getVideoUrl(src) }})</p>
+        </div>
     </div>
 </template>
 
 <script>
 import props from '../mixins/props'
+
 require('../assets/css/main.css')
 
 export default {
     name: 'video-player',
     mixins: [props],
-    computed: {
-        // isValidVideoUrl() {
-        //     return this.src &&
-        //         (
-        //             this.src.match(/^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/) ||
-        //             this.src.match(/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/(?:[^/]*)\/videos\/|album\/(?:\d+)\/video\/|video\/|)(\d+)(?:[a-zA-Z0-9_-]+)?/i)
-        //         );
-        // },
+    data() {
+        return {
+            isValidUrl: true,
+            urlType: 'iframe'
+        }
     },
     methods: {
         getVideoUrl(url) {
             if (!url) return null
-            const vimeo = 'https://vimeo.com'
-            const youtube = 'youtube.com'
 
-            if (url.includes(youtube)) {
-                const videType = {
-                    watch: 'watch?v=',
-                    youtuBe: 'youtu.be',
-                    list: '&list',
-                    t: '&t',
-                    feature: '&feature',
-                    embed: 'embed/'
-                }
+            const vimeo = /(?:https?:\/\/(?:www\.)?)?vimeo.com\/(?:channels\/|groups\/([^/]*)\/videos\/|album\/(\d+)\/video\/|)(\d+)(?:$|\/|\?)/;
+            const youtube = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+            let isValidYoutubeUrl = url.match(youtube);
 
-                if (url.includes(videType.list)) {
-                    url = url.split(videType.list)[0]
-                    return url.replace(
-                        videType.watch,
-                        videType.embed
-                    )
-                }
-
-                if (url.includes(videType.feature)) {
-                    url = url.split(videType.feature)[0]
-                    return url.replace(
-                        videType.watch,
-                        videType.embed
-                    )
-                }
-
-                if (url.includes(videType.t)) {
-                    url = url.split(videType.t)[0]
-                    return url.replace(
-                        videType.watch,
-                        videType.embed
-                    )
-                }
-
-                if (url.includes(videType.watch)) {
-                    return url.replace(
-                        videType.watch,
-                        videType.embed
-                    )
-                }
-
-                if (url.includes(videType.youtuBe)) {
-                    const embedLink = 'youtube.com/embed/'
-                    return url.replace(
-                        videType.youtuBe,
-                        embedLink
-                    )
-                }
+            if (isValidYoutubeUrl) {
+                this.urlType = 'iframe'
+                return 'https://www.youtube.com/embed/' + isValidYoutubeUrl[1];
             }
 
-            if (url.includes(vimeo)) {
-                const vimeoCode = url.split('/')[3]
-                return 'https://player.vimeo.com/video/' + vimeoCode
+            let isValidVimeoUrl = url.match(vimeo);
+            if (isValidVimeoUrl) {
+                this.urlType = 'iframe'
+                return 'https://player.vimeo.com/video/' + isValidVimeoUrl[3]
             }
 
+            return this.isValidVideoUrl(url);
+        },
+        isValidVideoUrl(url) {
+            // let videoTypes = ['.mp4', '.avi', '.mov', 'mpg', '.wmv', '.flv', '.webm', '.mkv', '.ogv', '.3gp', '.3g2']
+            let videoTypes = ['.mp4', '.ogg', '.webm']
+
+            for (let i in videoTypes) {
+                if (url.includes(videoTypes[i])) {
+                    this.urlType = 'video'
+                    return url
+                }
+            }
+            this.isValidUrl = false
             return url
         },
     }

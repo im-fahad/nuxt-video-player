@@ -3,7 +3,7 @@
     position: relative;
     overflow: hidden;
     padding-top: 56.25%;
-    background-color: #000;
+    background-color: transparent;
     border-radius: 5px;
     box-shadow: 0 5px 20px 0 rgb(0 0 0 / 15%);
 }
@@ -20,4 +20,129 @@
     outline: transparent;
     border-radius: 5px;
     background-color: #000;
+}
+
+.v-player__iframe video {
+    width: 100%;
+    height: 100%;
+}
+
+.v-player__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: transparent;
+    border-radius: 5px;
+    background-color: #000;
+}
+
+.v-player__content{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0,0,0,1);
+}
+.v-player__content-icon{
+    margin-bottom: 0;
+    color: #afafaf;
+    font-size: 2rem;
+}
+.v-player__content-strong{
+    font-size: 1.2rem;
+    color: #fff;
+}
+.v-player__content-text{
+    color: #fff;
+    font-size: .9rem;
+    margin-bottom: 0;
+}
+
+.v-player__content-link{
+    font-size: .8rem;
+    color: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+    .v-player__content-strong{
+        font-size: 1.15rem;
+    }
+    .v-player__content-text{
+        font-size: .88rem;
+    }
+    .v-player__content-link{
+        font-size: .78rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .v-player__content-strong{
+        font-size: 1.1rem;
+    }
+    .v-player__content-text{
+        font-size: .86rem;
+    }
+    .v-player__content-link{
+        font-size: .76rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .v-player__content-strong{
+        font-size: 1.05rem;
+    }
+    .v-player__content-text{
+        font-size: .84rem;
+    }
+    .v-player__content-link{
+        font-size: .74rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .v-player__content-strong{
+        font-size: 1rem;
+    }
+    .v-player__content-text{
+        font-size: .82rem;
+    }
+    .v-player__content-link{
+        font-size: .72rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .v-player__content-strong{
+        font-size: .95rem;
+    }
+    .v-player__content-text{
+        font-size: .80rem;
+    }
+    .v-player__content-link{
+        font-size: .7rem;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .v-player__content-strong{
+        font-size: .9rem;
+    }
+    .v-player__content-text{
+        font-size: .78rem;
+    }
+    .v-player__content-link{
+        font-size: .68rem;
+    }
 }

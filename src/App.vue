@@ -1,7 +1,8 @@
 <template>
-    <div id="app">
-        <video-player src="https://www.youtube.com/watch?v=K1XSun-Qe08"/>
-        <video-player class="mt-3" src="https://vimeo.com/389509769"/>
+    <div id="app" style="padding: 50px">
+        <video-player class="mb_-2" src="https://www.youtube.com/watch?v=9nhg2Y84rmY"/>
+        <video-player class="mb_-2" src="https://vimeo.com/389509769"/>
+        <video-player src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"/>
     </div>
 </template>
 
@@ -15,3 +16,8 @@ export default {
     }
 }
 </script>
+<style scoped>
+.mb_-2{
+    margin-bottom: 20px;
+}
+</style>

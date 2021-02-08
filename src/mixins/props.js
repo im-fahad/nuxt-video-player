@@ -28,7 +28,32 @@ const mixin = {
         playerStyles: {
             required: false,
             type: String
-        }
+        },
+        autoplay: {
+            required: false,
+            type: Boolean,
+            default: false
+        },
+        loop: {
+            required: false,
+            type: Boolean,
+            default: false
+        },
+        muted: {
+            required: false,
+            type: Boolean,
+            default: false
+        },
+        poster: {
+            required: false,
+            type: String,
+            default: null
+        },
+        preload: {
+            required: false,
+            type: String,
+            default: 'auto'
+        },
     }
 }
 
